@@ -1,0 +1,39 @@
+from flask import Flask, request, Response
+import json
+import random
+
+app = Flask(__name__)
+@app.route("/")
+def hello():
+    return "<h1>Welcome to Tahsin's Joke app!</h1>"
+    return render_template('index.html')
+@app.route("/jokes Generator")
+def jokesgen():
+    html_response = render_template('generator.html') +"<p>"+ random.choice(jokes)+"</p>"+render_template('newjoke.html')
+if __name__ == "__main__":
+    app.run(host='127.0.0.1')
+
+import random
+
+
+def jokes(self):
+    you_want_a_joke = input("would you like to hear a joke?")
+    how_many_jokes = input("How many jokes would you like to hear? (Max 5)")
+
+    list_of_jokes = {
+        1: "What the ocean say to other ocean? They just waved :'(",
+        2: "Wanna hear a construction joke? I'm constructing err building it",
+        3: "Two bytes meet,the first byte asks are you ill? He said na I'm feeling off, my wife left me and my son decided to get with l3 cache :(",
+        4: "Programming is like biological reproduction. One mistake and you have to support it for the rest of your life.",
+        5: "Why did the programmer quit his job? Cos he didn't get a raise!"
+    }
+
+
+    i = 0
+    if str(you_want_a_joke) == "yes":
+        while i <= how_many_jokes:
+            print(random.choice(list(list_of_jokes)))
+            i = i + 1
+    else:
+        quit()
+
